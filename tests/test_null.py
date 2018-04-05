@@ -1,17 +1,18 @@
 
+from __future__ import absolute_import
 import pytest
 
 from fastjsonschema import JsonSchemaException
 
 
-exc = JsonSchemaException('data must be null')
-@pytest.mark.parametrize('value, expected', [
+exc = JsonSchemaException(u'data must be null')
+@pytest.mark.parametrize(u'value, expected', [
     (0, exc),
     (None, None),
     (True, exc),
-    ('abc', exc),
+    (u'abc', exc),
     ([], exc),
     ({}, exc),
 ])
 def test_null(asserter, value, expected):
-    asserter({'type': 'null'}, value, expected)
+    asserter({u'type': u'null'}, value, expected)

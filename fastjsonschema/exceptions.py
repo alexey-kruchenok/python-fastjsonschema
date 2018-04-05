@@ -1,6 +1,6 @@
 
 class JsonSchemaException(ValueError):
-    """
+    u"""
     Exception raised by validation function. Contains ``message`` with
     information what is wrong.
     """

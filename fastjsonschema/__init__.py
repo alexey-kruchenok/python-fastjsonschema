@@ -49,6 +49,7 @@ Note that there are some differences compared to JSON schema standard:
 Support only for Python 3.3 and higher.
 """
 
+from __future__ import absolute_import
 from .exceptions import JsonSchemaException
 from .generator import CodeGenerator
 

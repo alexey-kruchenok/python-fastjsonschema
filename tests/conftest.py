@@ -1,4 +1,6 @@
 
+from __future__ import with_statement
+from __future__ import absolute_import
 import os
 import sys
 
@@ -19,7 +21,7 @@ def asserter():
     def f(definition, value, expected):
         # When test fails, it will show up code.
         code_generator = CodeGenerator(definition)
-        print(code_generator.func_code)
+        print code_generator.func_code
         pprint(code_generator.global_state)
 
         validator = compile(definition)
@@ -28,5 +30,8 @@ def asserter():
                 validator(value)
             assert exc.value.message == expected.message
         else:
+#            with pytest.raises(JsonSchemaException) as exc:
+#                validator(value)
+#                pprint(exc)
             assert validator(value) == expected
     return f

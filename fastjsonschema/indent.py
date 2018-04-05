@@ -11,7 +11,7 @@ def indent(func):
     return wrapper
 
 
-class Indent:
+class Indent(object):
     def __init__(self, instance):
         self.instance = instance
 

@@ -11,3 +11,5 @@ dist/
 *.tar.gz
 *egg-info
 MANIFEST
+.idea
+.pytest_cache

@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+from __future__ import absolute_import
 try:
     from setuptools import setup
 except ImportError:
@@ -7,36 +8,36 @@ except ImportError:
 
 
 setup(
-    name='fastjsonschema',
-    version='1.1',
-    packages=['fastjsonschema'],
+    name=u'fastjsonschema',
+    version=u'1.1',
+    packages=[u'fastjsonschema'],
 
     install_requires=[
-        'requests',
+        u'requests',
     ],
     extras_require={
-        "test": [
-            "colorama",
-            "jsonschema",
-            "json-spec",
-            "pytest",
-            "validictory",
+        u"test": [
+            u"colorama",
+            u"jsonschema",
+            u"json-spec",
+            u"pytest",
+            u"validictory",
         ],
     },
 
-    url='https://github.com/seznam/python-fastjsonschema',
-    author='Michal Horejsek',
-    author_email='horejsekmichal@gmail.com',
-    description='Fastest Python implementation of JSON schema',
-    license='BSD',
+    url=u'https://github.com/seznam/python-fastjsonschema',
+    author=u'Michal Horejsek',
+    author_email=u'horejsekmichal@gmail.com',
+    description=u'Fastest Python implementation of JSON schema',
+    license=u'BSD',
 
     classifiers=[
-        'Programming Language :: Python',
-        'Programming Language :: Python :: 3',
-        'License :: OSI Approved :: BSD License',
-        'Operating System :: OS Independent',
-        'Development Status :: 5 - Production/Stable',
-        'Intended Audience :: Developers',
-        'Topic :: Software Development :: Libraries :: Python Modules',
+        u'Programming Language :: Python',
+        u'Programming Language :: Python :: 2.7',
+        u'License :: OSI Approved :: BSD License',
+        u'Operating System :: OS Independent',
+        u'Development Status :: 5 - Production/Stable',
+        u'Intended Audience :: Developers',
+        u'Topic :: Software Development :: Libraries :: Python Modules',
     ],
 )

@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 from textwrap import dedent
 import timeit
 
@@ -80,7 +81,7 @@ jsonspec = load(JSON_SCHEMA)
 def t(func, valid_values=True):
     module = func.split('.')[0]
 
-    setup = """from __main__ import (
+    setup = u"""from __main__ import (
         JSON_SCHEMA,
         VALUES_OK,
         VALUES_BAD,
@@ -93,12 +94,12 @@ def t(func, valid_values=True):
     """
 
     if valid_values:
-        code = dedent("""
+        code = dedent(u"""
         for value in VALUES_OK:
             {}(value, JSON_SCHEMA)
         """.format(func))
     else:
-        code = dedent("""
+        code = dedent(u"""
         try:
             for value in VALUES_BAD:
                 {}(value, JSON_SCHEMA)
@@ -107,10 +108,10 @@ def t(func, valid_values=True):
         """.format(func))
 
     res = timeit.timeit(code, setup, number=NUMBER)
-    print('{:<20} {:<10} ==> {}'.format(module, 'valid' if valid_values else 'invalid', res))
+    print '{:<20} {:<10} ==> {}'.format(module, 'valid' if valid_values else 'invalid', res)
 
 
-print('Number: {}'.format(NUMBER))
+print 'Number: {}'.format(NUMBER)
 
 t('fast_compiled')
 t('fast_compiled', valid_values=False)

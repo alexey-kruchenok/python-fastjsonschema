@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from __future__ import absolute_import
 import time
 import sys
 
@@ -22,10 +23,10 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'fastjsonschema'
-copyright = u'2016-{}, Seznam.cz'.format(time.strftime("%Y"))
+project = 'fastjsonschema'
+copyright = '2016-{}, Seznam.cz'.format(time.strftime(u"%Y"))
 
-# The version info for the project you're documenting, acts as replacement for
+# The version info for the project yo're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
 # built documents.
 #
